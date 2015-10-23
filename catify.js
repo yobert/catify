@@ -110,6 +110,33 @@ var catstates = [
 	[144, 48, 48, 24]
 ];
 
+(function() {
+	// add a cat when CAT is typed
+	var buffer = '';
+	if(document.body) {
+		listener_add(document, 'keydown', function(e) {
+			var k = get_key(e);
+			k = String.fromCharCode(k);
+			if(k == 'C') {
+				buffer = k;
+				return;
+			}
+
+			if(!buffer.length) {
+				return;
+			}
+
+			buffer += k;
+			if(buffer == 'CAT') {
+				catify();
+				buffer = '';
+			}else if(buffer.length > 3) {
+				buffer = '';
+			}
+		});
+	}
+}());
+
 function catify() {
 	if(!document.createRange)
 		return; // :'(
@@ -321,11 +348,11 @@ function resize() {
 
 function all_text_nodes(element, cb)
 {
-	if(element.childNodes.length > 0) 
-		for(var i = 0; i < element.childNodes.length; i++) 
+	if(element.childNodes.length > 0)
+		for(var i = 0; i < element.childNodes.length; i++)
 			all_text_nodes(element.childNodes[i], cb);
 
-	if(element.nodeType == Node.TEXT_NODE && /\S/.test(element.nodeValue)) 
+	if(element.nodeType == Node.TEXT_NODE && /\S/.test(element.nodeValue))
 		cb(element);
 }
 
