@@ -202,7 +202,7 @@ function init() {
 		key_held[k] = true;
 
 		if(k >= 37 && k <= 40) {
-			e.returnValue = false;
+			e.preventDefault();
 		}
 	});
 
@@ -213,7 +213,7 @@ function init() {
 		key_held[k] = false;
 
 		if(k >= 37 && k <= 40) {
-			e.returnValue = false;
+			e.preventDefault();
 		}
 	});
 }
