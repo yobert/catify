@@ -152,9 +152,11 @@ function catify() {
 	if(!document.createRange)
 		return; // :'(
 
-	if(!inited) {
-		init();
+	if(inited) {
+		return;
 	}
+
+	init();
 
 	cat = document.createElement('div');
 	cat.style.position = 'absolute';
@@ -181,10 +183,8 @@ function catify() {
 	draw();
 	document.body.appendChild(cat);
 
-	if(!inited) {
-		setInterval(update, 16);
-		inited = true;
-	}
+	setInterval(update, 16);
+	inited = true;
 }
 
 function init() {
