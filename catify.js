@@ -1,7 +1,7 @@
 (function(){
 	"use strict";
 
-var cat1_base64 = 'iVBORw0KGgoAAAANSUhEUgAAAMQAAABICAQAAAAD3ZJDAAAABGdBTUEAALGPC/xhBQAAAAJiS0dEAP+Hj8y/AAADEUlEQVR42u1cy3LDIAzEnfz/L7uXOkMoeoLi9czupXVghRJYDEj2cbY5jr+C8/j8rL9G4Y2c0Q4Kr683Xv80AgIvq8Jxeszcy3uCjxaXigDBtIP6+auvcF1L8+EdPIlz/Y/C03AeVAQM/nWWd/4be5+8NR4VAQL1HiFhZS4kb86jIkCgdtZYaO0eycvzqAgQvFqTz3kyqOQ9xc8Mj4oAwdGCo0yqN+44JV50VK/yvu1ntj0qAgTH2eLz3ni+Et11RrkjD9nPbHtUBAhereVGnHftrHEzIxzdz2x7VAQIPjriPHL9Sd46j4oAwcf0Z61/pWgUees8KgIEKwkJxEZQESAw85oq4Mngu8u+J3Ovwn8qAgTTLI6q0ZqNbEk2rIyJqP3+u89+h0r/qQgQvDtoR2+PRmeZ3SvtzE42xxGsKQbZfyoCBO94hNXbsw3HbDSMve45l9dOObWImeab5KNnREvPQFj2s/63RkXA4B2zXoW22rg+39mO135Wkdkc1qz/VAQIUjFrC9kc0KzdXfbv9J+KAIG4j8iictR61uzIqqMiHoD36Wt0PSyVZxHJA1qxZ0XKdtqNgIoAgeuJIW1N7XmqcsbVeFqs14oTjHWsNqJvEajyn4oAgRih0+a81fnQez+56nnaq476VftPRYDAjFlrvd+Xee8PIyeyCvP60rc3K9PuBZFY9U7/qQgQMK8JBFQECLblNVmrlsheI2O/2v9qUBEg+BePWM3Vmdmw8oV22K/0fxe0705FgODjOevMPC6dZGbeBOlpY7TvOfu523+pnR5UBAjEN5h5co2kcqmeJ7sjkj3h2U1nYit9vTE3y5uhov1GM9VRESBIv9PPgmdl4x2RHvvV/l+2s8+IW+1QESBIvdPPwh2j9Un+z9qhIkCw/Rk6K2ZQnXeE7r/UDhUBgpQitNyeFRtVOUM77Xnzu6K/DxUBAnUfYeXkRM95vpl3VOG/xtPsS+U9qAgQqHlN19/o++yqEIlpfNv/1dUWFQECcWetRdmin3k4rcXyj6wvVeX/rJ7G6U9veY94AH4BbM+OlWvRZgYAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTQtMTAtMjNUMTY6MTk6MzUtMDY6MDCRv42YAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE0LTEwLTIzVDE2OjE5OjM1LTA2OjAw4OI1JAAAAABJRU5ErkJggg==';
+var cat1_base64 = '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';
 
 function get_id(i) {
 	var e = document.getElementById(i);
@@ -87,11 +87,15 @@ var stillstep = 0;
 var catstate = 0;
 var jumping = false;
 var jumpvel = 0;
+var jumpstate = -1;
 var movespeed = 4;
+var dir = 0;
 var bounds;
 var focused = true;
 var inited = false;
 
+
+// [x, y, w, h]
 var catstates = [
 	[0,    0, 28, 24],
 	[28,   0, 28, 24],
@@ -100,16 +104,47 @@ var catstates = [
 	[112,  0, 28, 24],
 	[140,  0, 28, 24],
 	[168,  0, 28, 24],
-
+	// Walk left
 	[0,   24, 48, 24],
 	[48,  24, 48, 24],
 	[96,  24, 48, 24],
 	[144, 24, 48, 24],
-
+	// Walk right
 	[0,   48, 48, 24],
 	[48,  48, 48, 24],
 	[96,  48, 48, 24],
-	[144, 48, 48, 24]
+	[144, 48, 48, 24],
+	// Prepare to jump
+	[0,   77, 28, 22],
+	[29,  79, 22, 20],
+	// Start jump right
+	[58,  78, 26, 19],
+	[84,  76, 52, 21],
+	[136, 76, 52, 21],
+	// Start jump left
+	[162,100, 26, 19],
+	[110, 98, 52, 21],
+	[58,  98, 52, 21],
+	// Falling right
+	[0,  119, 48, 25],
+	[48, 121, 48, 23],
+	// Falling left
+	[145,119, 48, 25],
+	[97, 121, 48, 23],
+];
+
+var walk = [
+	[11, 12, 13, 14],
+	[ 7,  8,  9, 10],
+];
+
+var jump = [
+	[15, 16, 17, 18, 19],
+	[15, 16, 20, 21, 22],
+];
+var fall = [
+	[23, 24],
+	[25, 26],
 ];
 
 (function() {
@@ -268,13 +303,22 @@ function update(force) {
 	if(key_held[38] && !jumping && sitting) {
 		jumping = true;
 		jumpvel = 10;
+		jumpstate = -1;
 	}
 
 	if(key_held[40] || (!jumping && !sitting && !cantfall)) {
 		y = y + movespeed;
 	}
 
+	if(x != ox)
+		dir = (x > ox)?0:1;
+
 	if(jumping) {
+		jumpstate++;
+		if(jumpstate < jump[dir].length)
+			catstate = jump[dir][jumpstate];
+		else
+			catstate = jump[dir][jump[dir].length-1];
 		y = y - jumpvel;
 
 		if(y - catstates[catstate][3] < 0)
@@ -309,12 +353,18 @@ function update(force) {
 
 	astep++;
 
-	var walka = Math.floor(astep / 2) % 4;
+	if(jumping) {
+		draw();
+		return;
+	}
 
-	if(x > ox)
-		catstate = 11 + walka;
-	else
-		catstate = 7 + walka;
+	if(!jumping && !sitting) {
+		catstate = fall[dir][astep%2];
+		draw();
+		return;
+	}
+
+	catstate = walk[dir][Math.floor(astep / 2) % 4];
 
 	draw();
 }
